@@ -1,0 +1,10 @@
+{
+ "lang": "pl",
+ "host": "https://pl.codefixcoffee.com",
+ "ui": {
+  "home_title": "CodeFix Blog",
+  "home_desc": "Poradniki napraw i kody błędów Jura, De’Longhi, Philips/Saeco, Miele, Nespresso, GE i Samsung.",
+  "back": "Wróć na stronę",
+  "footer": "Poradniki napraw i objaśnienia kodów błędów z codefixcoffee.com."
+ }
+}
