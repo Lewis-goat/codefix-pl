@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>"Jura błędy 1–5: rodzina termoblokowa od podszewki"</title>
+<meta name="description" content=""Błędy 1–5 w Jurze dotyczą termobloków, czujników NTC i bezpieczników termicznych. Który kod odpowiada której części i na czym polega pułapka błędu 2?"">
+<link rel="canonical" href="https://pl.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/">
+<link rel="alternate" hreflang="en" href="https://blog.codefixcoffee.com/post/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="fr" href="https://fr.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="de" href="https://de.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="es" href="https://es.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="it" href="https://it.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="pl" href="https://pl.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="nl" href="https://nl.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="pt" href="https://pt.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="hu" href="https://hu.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="cs" href="https://cs.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="ro" href="https://ro.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="sv" href="https://sv.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+  <link rel="alternate" hreflang="tr" href="https://tr.codefixcoffee.com/blog/jura-thermoblock-errors-1-to-5/" />
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="alternate" type="application/rss+xml" title="CodeFix Blog" href="/blog/rss.xml">
+</head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/blog/">☕ CodeFix Blog</a><span><a href="/">Wróć na stronę</a></span></div></header>
+<main>
+<h1>"Jura błędy 1–5: rodzina termoblokowa od podszewki"</h1>
+<p class="meta">2026-10-09</p>
+<p>Kody od 1 do 5 wyglądają w Jurze jak losowy ciąg cyfr, a jednak łączy je jedno: ciepło. Każdy z nich prowadzi do termobloków — kompaktowych, przepływowych grzałek produkujących wodę do kawy i parę — albo do czujników i kordów bezpieczników termicznych, które nad tymi grzałkami czuwają. Gdy raz ogarniesz logikę tej rodziny, sam numer kodu podpowiada, która grzałka się skarży i czy problem leży w pomiarze, w temperaturze czy w zasilaniu.</p>
+<h2>Dwa termobloki, pięć kodów</h2>
+<p>W ekspresie Jura pracują dwa termobloki: kawowy podgrzewa wodę do zaparzania, a parowy zasila sekcję pary i gorącej wody. Każdy ma własny czujnik NTC — rezystor, którego opór zmienia się wraz z temperaturą — meldujący płycie sterującej bieżący stan, i każdy chronią kordy z bezpiecznikami termicznymi, odcinające zasilanie przy przegrzaniu. Błędy 1–5 to język, którym płyta komunikuje, że jeden z tych elementów szwankuje:</p>
+<ul>
+<li><strong>Błędy 1 i 2</strong> wskazują obwód czujnika termobloku kawowego.</li>
+<li><strong>Błędy 3 i 4</strong> dotyczą termobloku parowego — odczyt zbyt niski albo przegrzanie.</li>
+<li><strong>Błąd 5</strong> sygnalizuje, że sama grzałka nie dorabia.</li>
+</ul>
+<h2>Strona kawowa</h2>
+<h3>Błąd 1: usterka czujnika termobloku kawowego</h3>
+<p><a href="https://pl.codefixcoffee.com/jura/automatic-machines/error-1/">Błąd 1</a> oznacza, że płyta nie potrafi wyciągnąć sensownej wartości z czujnika temperatury termobloku kawowego — w rodzinach S, X, J i Z to klasyczna usterka sensora, a w modelach F i E80 zwykle uszkodzenie mechaniczne czujnika. Warto znać jedną osobliwość: maszyna dopiero co dowieziona z zimnego samochodu lub garażu potrafi zgłosić ten kod, choć nic w niej nie jest zepsute. Jeśli pojawia się na rozgrzanym ekspresie i natychmiast wraca po restarcie, obwód czujnika jest rozwarty — winny jest czujnik, jego przewód albo kordy bezpieczników termicznych zasilające blok.</p>
+<h3>Błąd 2: czujnik przerwany — albo ekspres po prostu zmarzł</h3>
+<p><a href="https://pl.codefixcoffee.com/jura/automatic-machines/error-2/">Błąd 2</a> to najczęstszy kod Jury w ogóle i ma dwie twarze. Wersja niegroźna: temperatura maszyny spadła poniżej około 10 °C i grzałka celowo pozostała zablokowana do czasu ogrzania — typowe przy dostawach zimą albo dla ekspresu stojącego w chłodnym pomieszczeniu. Wersja poważna: czujnik termobloku kawowego lub kordy bezpieczników termicznych rozwarły obwód.</p>
+<p>Diagnozą jest test rozgrzewania. Doprowadź maszynę do temperatury pokojowej — użytkownicy dmuchują pięć minut suszarką na niskim biegu w głąb wnęki zbiornika wody albo wypełniają zbiornik letnią (nie gorącą) wodą — i zrestartuj ją. Kod znika? Nic nie jest zepsute, tylko ustaw ekspres w cieplejszym miejscu. Utrzymuje się na ciepłej maszynie? Obwód czujnika jest rozwarty i wewnątrz trzeba sprawdzić NTC oraz kordy bezpieczników.</p>
+<h2>Strona parowa</h2>
+<h3>Błąd 3: termoblok parowy raportuje za niską temperaturę</h3>
+<p><a href="https://pl.codefixcoffee.com/jura/automatic-machines/error-3/">Błąd 3</a> jest parowym lustrem błędu 1: termoblok parowy nie zgłasza temperatury — przez czujnik, jego przewód albo dlatego, że maszyna wciąż jest zbyt zimna. Jest i dodatkowy trop: gruba warstwa kamienia spowalnia nagrzewanie na tyle, że niektóre wersje oprogramowania przerywają kontrolę, więc pełne odkamienianie powinno wyprzedzać jakikolwiek demontaż. Po otwarciu obejrzyj przewód czujnika w miejscu, w którym się zgina.</p>
+<h3>Błąd 4: termoblok parowy się przegrzewa</h3>
+<p><a href="https://pl.codefixcoffee.com/jura/automatic-machines/error-4/">Błąd 4</a> trzeba traktować poważnie. Termoblok parowy rozgrzał się ponad to, czego oczekiwała elektronika — albo czujnik zaniża odczyt (kamień izolujący sensor, skorodowane styki), albo płyta zasilająca nie odcięła grzałki. Sam producent wskazuje błędy 2 i 4 jako dwie najczęstsze naprawy. Po ostudzeniu i odkamienieniu pierwszą wymianą jest czujnik; jeśli blok przegrzewa się ponownie z nowym NTC, płyta nie wyłącza grzałki i wymaga wymiany (budżet 120–250 €). Grzałka, która nie chce się wyłączyć, to ryzyko pożaru — nie zostawiaj maszyny pod napięciem bez nadzoru, dopóki ten kod jest aktywny.</p>
+<h3>Błąd 5: grzałka nie osiąga temperatury</h3>
+<p><a href="https://pl.codefixcoffee.com/jura/automatic-machines/error-5/">Błąd 5</a> znaczy, że grzałka dostała polecenie grzania, a temperatura ani drgnęła. W Jurze winne są niemal zawsze kordy bezpieczników termicznych chroniące termoblok — przepadają po epizodzie przegrzania albo po prostu z wiekiem; drugą możliwością jest martwy element termobloku. Zbyt zimna maszyna też potrafi wywołać ten kod, więc najpierw ją ogrzej. Wewnątrz zmierz oba kordy i element: to, co pokazuje przerwę, jest częścią do wymiany — a następnie ustal, dlaczego bezpieczniki padły (kamień, zapieczony przekaźnik albo praca na sucho po opróżnieniu zbiornika).</p>
+<h2>Części spinające całą rodzinę</h2>
+<p>W całej tej rodzinie kodów powracają dwaj bohaterowie: kordy bezpieczników termicznych i czujniki NTC. Oryginalny NTC Jury kosztuje około 25–40 €, zestaw kordów 15–30 €, a termoblok 90–180 €. Przy wymianie czujnika praktycy zawsze wymieniają razem z nim kordy bezpieczników. Jest też wzorzec, który naprawdę ma znaczenie: kord pękający ponownie w ciągu kilku dni nie był pechowy — to płyta zasilająca zatrzaskuje grzałkę w trybie pracy.</p>
+<p>Pamiętaj, że obudowy Jury trzymają śruby zabezpieczające, a termobloki pracują na napięciu sieciowym — ta rodzina to naprawa warsztatowa, chyba że masz odpowiednie przygotowanie. Naprawa broni się w maszynach S, Z, GIGA i nowszych seriach E; przy dziesięcioletniej Impressie porównaj wycenę z ceną egzemplarza po regeneracji. Aktualne instrukcje i dane serwisowe publikuje <a href="https://www.jura.com">oficjalna strona Jura</a>, a pozostałe kody zbiera <a href="https://pl.codefixcoffee.com/jura/">indeks błędów Jura</a>.</p>
+<h3>Polska wskazówka: zima i domy letniskowe</h3>
+<p>W Polsce błąd 2 potrafi występować sezonowo — ekspres dowieziony kurierem w mrozie albo stojący zimą w nieogrzewanym pokoju lub domu letniskowym łatwo schładza się poniżej 10 °C. Po transporcie w niskiej temperaturze daj maszynie kilka godzin w cieple, zanim ją włączysz: chroni to elektronikę także przed skropleniami. Dopiero gdy kod wraca mimo rozgrzanej obudowy, szukaj usterki w obwodzie czujnika.</p>
+</main>
+<footer>Poradniki napraw i objaśnienia kodów błędów z codefixcoffee.com.</footer>
+</body></html>
