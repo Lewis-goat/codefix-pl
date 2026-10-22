@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breville/Sage Oracle — para i kody ER: co sprawdzić najpierw</title>
+<meta name="description" content="Usterki pary w Breville/Sage Oracle: znaczenie kodów Error/ER po stronie pary, procedura przedmuchania na start i kiedy winna jest tylko skala.">
+<link rel="canonical" href="https://pl.codefixcoffee.com/blog/breville-oracle-steam-guide/">
+<link rel="alternate" hreflang="en" href="https://blog.codefixcoffee.com/post/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://fr.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="de" href="https://de.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="es" href="https://es.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="it" href="https://it.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="pl" href="https://pl.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="nl" href="https://nl.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="pt" href="https://pt.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="hu" href="https://hu.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="cs" href="https://cs.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="ro" href="https://ro.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="sv" href="https://sv.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="tr" href="https://tr.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="alternate" type="application/rss+xml" title="CodeFix Blog" href="/blog/rss.xml">
+<meta name="google-adsense-account" content="ca-pub-9660119725457689"><script>(function(){var u="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660119725457689";var d=false;function l(){if(d)return;d=true;var s=document.createElement("script");s.async=true;s.crossOrigin="anonymous";s.src=u;document.head.appendChild(s)}["scroll","pointerdown","keydown","touchstart"].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});addEventListener("load",function(){setTimeout(l,3500)})})();</script></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/blog/">☕ CodeFix Blog</a><span><a href="/">Wróć na stronę</a></span></div></header>
+<main>
+<h1>Breville/Sage Oracle — para i kody ER: co sprawdzić najpierw</h1>
+<p class="meta">2026-10-22</p>
+<p>Strona parowa ekspresu Oracle to jego najbardziej pracowite miejsce: stalowy bojler pary, rurka z automatycznym spienianiem mleka, sondy poziomu i pompa do napełniania, wszystko utrzymywane w temperaturze roboczej codziennie. To również źródło dużej części kodów błędów maszyny. Rodzina Oracle korzysta z 32-pozycyjnej tabeli serwisowej, której Breville nie publikuje, a w Wielkiej Brytanii ten sam sprzęt nosi odznakę <strong>Sage</strong> — kody są identyczne. Zanim założysz awarię podzespołu, wykonaj najpierw tanie kontrole: większość zatrzymań po stronie pary to zapchana końcówka rurki, pominięty przedmuch albo kamień osadzony na sondzie.</p>
+<h2>Gdzie w tabeli Oracle mieszają się kody parowe</h2>
+<p>Oracle (BES980) i Oracle Touch (BES990) współdzielą jedną tabelę; BES980 pokazuje wpisy jako „Error 1” do „Error 32”, a BES990 dodaje przedrostek ER. Wpisy związane z parą kumulują się w pięciu miejscach:</p>
+<ul>
+<li><strong>Error 1–4</strong> — czujnik temperatury bojlera pary w czterech wariantach: rozwarcie obwodu przy starcie, utrata sygnału w trakcie pracy oraz zwarcie w obu tych sytuacjach. Jedna sonda, cztery sposoby zgłoszenia.</li>
+<li><strong>Error 13–16</strong> — ten sam kwartet dla czujnika temperatury samej rurki parowej, sondy przerywającej spienianie po osiągnięciu właściwej temperatury mleka. Pracuje w najwilgotniejszym miejscu całej maszyny.</li>
+<li><strong>Error 18</strong> — bojler pary nie nagrzewa się prawidłowo.</li>
+<li><strong>Error 20 i 21</strong> — problemy z poziomem wody w bojlerze lub z pompą napełniającą oraz odczyt sondy poziomu niespójny z tym, czego oczekuje płyta.</li>
+<li><strong>Error 26</strong> — bojler pary przegrzał się powyżej wartości zadanej; <strong>Error 32</strong> to wyciek z bojlera pary albo nieudane napełnienie.</li>
+</ul>
+<p>Nie wszystko w okolicy rurki jest przy tym „parowe”: kody 5–8 należą do czujnika bojlera kawy, a <a href="https://pl.codefixcoffee.com/breville/oracle-bes980/error-8/">Error 8</a> to jego pozycja „zwarcie w trakcie pracy”. Rozdzielenie obu rodzin ułatwia odczyt dziennika — na BES980 przytrzymaj jednocześnie 1 CUP, 2 CUP i POWER przy wyłączonej maszynie, żeby otworzyć Error Storage i przejrzeć wszystkie 32 kody wraz z licznikami.</p>
+<h2>Od czego zacząć: procedura przedmuchania</h2>
+<p>Słaba, „plująca” para albo kod wyświetlony tuż po napoju mlecznym wskazują zwykle na końcówkę rurki, a nie na bojler:</p>
+<ol>
+<li>Odłącz maszynę od zasilania i pozwól rurce ostygnąć.</li>
+<li>Wykręć końcówkę pary i namocz ją w gorącej wodzie z odrobiną środka do odkamieniania; każdy otwór przeczyść igłą z dołączonego narzędzia do czyszczenia.</li>
+<li>Wykonaj przedmuch — około dziesięć sekund pary do tacy kroplowej bez końcówki, a potem jeszcze raz z zamocowaną końcówką.</li>
+<li>Odtąd przedmuchuj rurkę po każdej sesji z mlekiem; zaschnięte mleko w końcówce to punkt startowy większości tego typu zatrzymań.</li>
+</ol>
+<p>Jeśli maszyna monitoruje ciśnienie pary — jak Oracle Jet ze swoim kodem E16 — zabrudzona końcówka potrafi wywołać błąd, zanim jeszcze zauważysz, że para osłabła.</p>
+<h2>Twardość wody, kamień i sondy poziomu</h2>
+<p>Przy twardej wodzie kamień pisze własne kody błędów. Sondy poziomu bojlera pary siedzą stale w gorącej wodzie, a kamienna powłoka działa jak izolator: płyta odczytuje „brak wody”, mimo że bojler jest pełny — i to jest klasyczna droga do Error 20 oraz 21, a także do nieudanego napełniania z Error 32. Osad odkłada się dodatkowo w torze rurki i na wlocie pompy napełniającej. Pełne odkamienianie, obejmujące cykl bojlera pary, to najtańsza diagnostyka, jaką możesz przeprowadzić, i samodzielnie usuwa zaskakująco wiele z tych kodów.</p>
+<p>Ten sam wniosek podsuwa bliźniaczy model z rodziny: Dual Boiler chowa kody 00–12 w menu autodiagnostyki, a <a href="https://pl.codefixcoffee.com/breville/dual-boiler-bes920/00/">kod 00</a> — brak wykrycia czujnika bojlera pary — otwiera tabelę, której pozycje dotyczące poziomu i napełniania zachowują się pod twardą wodą dokładnie tak samo.</p>
+<h2>Kiedy odkamieniać, a kiedy rozbierać</h2>
+<p>Najpierw odkamienianie, potem demontaż — ale warto znać granicę, za którą środek już nie pomaga:</p>
+<ul>
+<li><strong>Odkamieniaj w pierwszej kolejności</strong> przy kodach poziomu, sond i napełniania (20, 21, 32), przy słabej parze bez żadnego kodu oraz na każdej maszynie, której ostatni cykl minął ponad trzy miesiące temu. Koszt: butelka odkamieniacza.</li>
+<li><strong>Odkamienianie nie pomoże</strong>, gdy kod czujnika wraca natychmiast na świeżo odkamienionej, rozgrzanej maszynie — niezależnie od tego, czy to pozycja parowa z zakresu 1–4, czy <a href="https://pl.codefixcoffee.com/breville/oracle-bes980/error-8/">Error 8</a> po stronie kawy. Kod, który przeżywa odkamienianie, wskazuje na samą sondę, jej przewód lub złącze.</li>
+<li><strong>Zatrzymaj się i sprawdź uszczelki</strong>, jeśli Error 26 wraca: nieszczelny o-ring sondy parowej przepuszcza parę, która nagrzewa przewód czujnika i naśladuje rozpędzający się bojler. Nowe o-ringi sondy są tanie; płyta z triakiem, który nie potrafi wyłączyć grzałki — już nie.</li>
+<li><strong>Error 18</strong> na maszynie, która w ogóle przestała grzać parę, leży zwykle po stronie grzania — bezpiecznik termiczny, grzałka lub płyta sterująca — a nie kamienia, więc traktuj go jako naprawę, nie jako porządki.</li>
+</ul>
+<p>Przy demontażu końcówek i sond przydadzą się fotografie krok po kroku — solidną bazę przewodników naprawczych stanowi <a href="https://www.ifixit.com">iFixit</a>.</p>
+<h2>Ile kosztują te części</h2>
+<p>Oryginalne zestawy czujników temperatury to około €25–95 w zależności od sondy; zespoły rurki parowej, zawierające własny czujnik, kosztują ok. €60–95; zestaw sondy z o-ringami ok. €85, a pompa napełniająca €30–60. Na tym tle fabryczne wyceny usterek wewnętrznych poza gwarancją — zwykle €300–500 — sprawiają, że butelka odkamieniacza na start, a wymiana sondy w niezależnym serwisie w drugiej kolejności to niemal zawsze lepsza arytmetyka. Oryginalne części i wsparcie do maszyn Sage znajdziesz na <a href="https://www.sageappliances.co.uk">stronie Sage Appliances</a>, a Sage-ową wersję tabel kodów w <a href="https://pl.codefixcoffee.com/uk/">brytyjskiej edycji serwisu</a>.</p>
+<h3>Woda z polskiego kranu a bojler pary</h3>
+<p>W większości polskich miast woda wodociągowa jest średnio twarda lub twarda — zwłaszcza na południu kraju, na przykład w Krakowie czy na Śląsku — co wyraźnie przyspiesza osadzanie kamienia w bojlerze pary i na sondach poziomu. Do ekspresu z bojlerem lepiej używać wody filtrowanej (dzbanek z filtrem lub filtr węglowo-jonowy) albo butelkowanej o obniżonej twardości. W takich warunkach odkamienianie warto planować częściej, niż sugeruje wskaźnik maszyny — w praktyce co dwa, trzy miesiące.</p>
+</main>
+<footer>Poradniki napraw i objaśnienia kodów błędów z codefixcoffee.com.</footer>
+</body></html>
