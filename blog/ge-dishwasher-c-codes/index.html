@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kody C w zmywarkach GE — usterki pompowania, nabierania i grzania</title>
+<meta name="description" content="Kody C1–C8 w zmywarkach GE obejmują usterki pompowania, nabierania i grzania, a 888 i CFE dotyczą płyt sterujących. Sprawdź sztuczkę z menu serwisowym.">
+<link rel="canonical" href="https://pl.codefixcoffee.com/blog/ge-dishwasher-c-codes/">
+<link rel="alternate" hreflang="en" href="https://blog.codefixcoffee.com/post/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="fr" href="https://fr.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="de" href="https://de.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="es" href="https://es.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="it" href="https://it.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="pl" href="https://pl.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="nl" href="https://nl.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="pt" href="https://pt.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="hu" href="https://hu.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="cs" href="https://cs.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="ro" href="https://ro.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="sv" href="https://sv.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+  <link rel="alternate" hreflang="tr" href="https://tr.codefixcoffee.com/blog/ge-dishwasher-c-codes/" />
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="alternate" type="application/rss+xml" title="CodeFix Blog" href="/blog/rss.xml">
+<meta name="google-adsense-account" content="ca-pub-9660119725457689"><script>(function(){var u="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660119725457689";var d=false;function l(){if(d)return;d=true;var s=document.createElement("script");s.async=true;s.crossOrigin="anonymous";s.src=u;document.head.appendChild(s)}["scroll","pointerdown","keydown","touchstart"].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});addEventListener("load",function(){setTimeout(l,3500)})})();</script></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/blog/">☕ CodeFix Blog</a><span><a href="/">Wróć na stronę</a></span></div></header>
+<main>
+<h1>Kody C w zmywarkach GE — usterki pompowania, nabierania i grzania</h1>
+<p class="meta">2026-10-23</p>
+<p>Zmywarki GE zgłaszają usterki kodami C na wyświetlaczu: od C1 do C8, do tego H2O przy problemach z naborem wody oraz 888 lub CFE, gdy niedomagają same płyty. W przeciwieństwie do większości producentów GE nie publikuje oficjalnej listy znaczeń, więc użytkownik musi na własną rękę skojarzyć dwuznakowy kod z objawem. <a href="https://pl.codefixcoffee.com/ge/dishwasher/">Sekcja zmywarek GE</a> opisuje każdy kod; ten przewodnik prowadzi przez rodziny usterek w kolejności, w jakiej najprawdopodobniej je spotkasz, i kończy się trikiem z menu serwisowym, pokazującym ostatnio zapamiętany błąd.</p>
+<h2>Rodzina odpływu: od C1 do C3</h2>
+<p>Trzy kody, jeden podsystem. C1 oznacza, że pompa odpływowa pracowała ponad dwie minuty bez opróżnienia komory (w części starszych modeli sygnalizuje natomiast zakleszczony przycisk); C2, że pompa nie ruszyła wcale albo przewód odpływowy jest całkowicie zablokowany; C3 to ogólny zapis „odprowadzanie nie przebiega prawidłowo”. Lista podejrzanych nigdy się nie zmienia: zapchany filtr i komora zlewowa, zagięty wąż odpływowy, niedawno zamontowany rozdrabniacz resztek z niewyjętą zaślepką lub uszkodzona pompa odpływowa. Od bezpłatnych działań startuje <a href="https://pl.codefixcoffee.com/ge/dishwasher/c1/">strona C1</a>: wysuń dolny kosz, wyczyść filtr i komorę, sprawdź wąż pod zlewem. Jeśli pompa okaże się buczyć lub milczeć, nowa kosztuje €40–80.</p>
+<h2>Nabór wody: C4, C5 i H2O</h2>
+<ul>
+<li><strong>C4</strong> — przepełnienie lub podwójne napełnienie po zaniku zasilania. Zawór wlotowy nie domyka się do końca, albo przełącznik pływakowy, który powinien przerwać nabór, zakleszczył się na zanieczyszczeniach. Kontrolę pływaka opisuje <a href="https://pl.codefixcoffee.com/ge/dishwasher/c4/">strona C4</a>; jeżeli komora napełnia się nawet przy wyłączonej zmywarce, zawór przepuszcza i wymaga wymiany (€25–50).</li>
+<li><strong>C5</strong> — zbyt mało wody w wyznaczonym czasie: zawór dopływu częściowo przymknięty, zabita siatka filtrująca na wlocie lub słaby zawór wlotowy.</li>
+<li><strong>H2O</strong> — brak wody w ogóle. Zanim cokolwiek ruszysz, sprawdź, czy zawór pod zlewem jest otwarty, a wąż nie jest zagięty.</li>
+</ul>
+<h2>Grzanie: od C6 do C8</h2>
+<p>C6 informuje, że woda nie osiągnęła około 49 °C (120 °F) nawet po wydłużonym okresie grzania. Przed uruchomieniem cyklu odkręć kran kuchenny do uzyskania gorącej wody — przy zimnym dopływie grzałka może po prostu nie nadążać. Jeśli naczynia wychodzą zimne i mokre, zmierz grzałkę pod kątem ciągłości: elementy grzejne kosztują €30–60, a termostat ograniczający €10–20. C7 to usterka obwodu czujnika temperatury (termistora) — częściej poluzowana wtyczka lub tani czujnik, choć niektóre modele obsługują tym samym kodem czujnik mętności wody. C8 bywa z kolei usterką mechaniczną, nie termiczną: kubek na detergent nie mógł się otworzyć, bo zastawiło go naczynie albo zaschnięty detergent zablokował zatrzask.</p>
+<h2>888 i CFE: kody płyt sterujących</h2>
+<p>Gdy usterka jest elektroniczna, a nie hydrauliczna, GE mówi to wprost. Kod <a href="https://pl.codefixcoffee.com/ge/dishwasher/888/">888</a> oznacza niezdany autotest płyty głównej — często po skoku napięcia podczas burzy uszkadzającym rejestr pamięci, czasem przez zalanie płyty wyciekającą wodą. <a href="https://pl.codefixcoffee.com/ge/dishwasher/cfe/">CFE</a> sygnalizuje zerwaną komunikację między interfejsem na drzwiach a płytą główną: zwykle przetarta wiązka w okolicy zawiasów albo mokre złącze. W obu przypadkach zaczyna się od resetu wyłącznikiem bezpiecznikowym, a kończy wymianą płyty, jeśli kod powraca — €90–200 za płytę główną lub €60–120 za interfejs.</p>
+<h2>Trik z menu serwisowego: odczytaj ostatni błąd</h2>
+<p>Zmywarka, która od tygodni się zatrzymuje, często nie pokazuje nic w chwili, gdy stajesz przed nią. Płyta jednak pamięta — i w większości modeli GE można ją o to zapytać:</p>
+<ol>
+<li>Otwórz drzwi na całą szerokość.</li>
+<li>Przytrzymaj przycisk Start przez pięć sekund, aby wejść do menu serwisowego.</li>
+<li>W modelach z wyświetlaczem schowanym za listwą drzwi naciśnij zamiast tego jednocześnie Select Cycle i Start na pięć sekund.</li>
+<li>Odczytaj z wyświetlacza ostatni zapisany błąd, po czym zamknij drzwi.</li>
+<li>Samą płytę zresetujesz, odcinając zasilanie wyłącznikiem na 60 sekund.</li>
+</ol>
+<p>Zanotuj kod, wyczyść go i uruchom cykl: zapamiętane C3 sprzed trzech tygodni plus świeże C3 dzisiaj oznacza realną usterkę odpływu, a nie jednorazowy zgrzyt.</p>
+<h2>Ile kosztują naprawy</h2>
+<p>Zdecydowana większość kodów C kończy się na pompie, zaworze, czujniku lub dozowniku — części za €10–80 — plus Twoja praca, jeśli czujesz się pewnie przy wyłączaniu zasilania i zdejmowaniu panelu. Płyty stanowią wyjątek: €90–200. Wizyta domowa technika to €120–250 za diagnozę wraz z częścią, co ma sens przy kodach płyt, a rzadko bywa potrzebne przy zapchanym filtrze.</p>
+<h3>Polska praktyka: zmywarka GE spod prądu 120 V</h3>
+<p>Marka GE Appliances nie ma oficjalnej dystrybucji w Polsce, więc jej zmywarki trafiają do nas niemal wyłącznie importem z USA. Sprzęt kupiony za oceanem zasilany jest napięciem 120 V i częstotliwością 60 Hz — w polskiej instalacji wymaga transformatora o odpowiedniej mocy, a układy z silnikami mogą pracować niepoprawnie przy 50 Hz, dlatego zawsze najpierw sprawdź tabliczkę znamionową. Części zamienne trzeba zamawiać z importu; numery modeli, instrukcje i materiały wsparcia znajdziesz na <a href="https://www.geappliances.com">oficjalnej stronie GE Appliances</a>.</p>
+</main>
+<footer>Poradniki napraw i objaśnienia kodów błędów z codefixcoffee.com.</footer>
+</body></html>
