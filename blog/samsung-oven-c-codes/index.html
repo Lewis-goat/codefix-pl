@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kody C w piekarnikach Samsung: rodzina temperatur</title>
+<meta name="description" content="Kody C-21, C-24 i C-F2 w kuchenkach Samsung: wyłączenie z przegrzaniem, szybki wzrost temperatury przy wentylacji i brak sygnału zwrotnego wentylatora.">
+<link rel="canonical" href="https://pl.codefixcoffee.com/blog/samsung-oven-c-codes/">
+<link rel="alternate" hreflang="en" href="https://blog.codefixcoffee.com/post/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="fr" href="https://fr.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="de" href="https://de.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="es" href="https://es.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="it" href="https://it.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="pl" href="https://pl.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="nl" href="https://nl.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="pt" href="https://pt.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="hu" href="https://hu.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="cs" href="https://cs.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="ro" href="https://ro.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="sv" href="https://sv.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+  <link rel="alternate" hreflang="tr" href="https://tr.codefixcoffee.com/blog/samsung-oven-c-codes/" />
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="alternate" type="application/rss+xml" title="CodeFix Blog" href="/blog/rss.xml">
+<meta name="google-adsense-account" content="ca-pub-9660119725457689"><script>(function(){var u="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660119725457689";var d=false;function l(){if(d)return;d=true;var s=document.createElement("script");s.async=true;s.crossOrigin="anonymous";s.src=u;document.head.appendChild(s)}["scroll","pointerdown","keydown","touchstart"].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});addEventListener("load",function(){setTimeout(l,3500)})})();</script></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/blog/">☕ CodeFix Blog</a><span><a href="/">Wróć na stronę</a></span></div></header>
+<main>
+<h1>Kody C w piekarnikach Samsung: rodzina temperatur</h1>
+<p class="meta">2026-10-25</p>
+<p>Kuchenki i piekarniki zabudowane Samsung — serie NE i NX oraz pokrewne NV i NZ — posługują się dwoma „dialektami” błędów. Kody dwuczęściowe, takie jak E-08 czy E-27, opisują elementy grzejne; krótkie, jak SE i tE — sam panel sterowania. Pomiędzy nimi mieści się rodzina C: C-21, C-24 i C-F2, czyli kody temperatur i nadzoru wentylatorów zebrane w <a href="https://pl.codefixcoffee.com/samsung-oven-error-codes/">indeksie kodów piekarników Samsung</a>. Warto traktować je najpoważniej ze wszystkich, bo przynajmniej jeden z nich oznacza, że piekarnik realnie się przegrzał.</p>
+<h2>Brak dziennika błędów do odczytania</h2>
+<p>Piekarniki Samsung nie mają dziennika usterek dostępnego dla użytkownika. Kod świeci na wyświetlaczu, dopóki nie usuniesz przyczyny albo nie odetniesz zasilania w skrzynce (procedury dla rodziny C zakładają 5–10 minut). Jeśli po takim resecie kod wraca, potraktuj go jako realny — kolejne resetowanie i nadzieja niczego nie zmienią.</p>
+<h2>C-21: wyłączenie z przegrzaniem</h2>
+<p><a href="https://pl.codefixcoffee.com/samsung/range-wall-oven/c-21/">C-21</a> powstaje, gdy układ bezpieczeństwa melduje, że temperatura w komorze wyszła poza bezpieczne okno, i płytka sterująca odcina grzanie. Zdarzały się zgłoszenia kuchenek nagrzewających się do niebezpiecznych temperatur jeszcze zanim pokazał się kod — to sygnał „przestań gotować”, nie chwilowa kapryśność elektroniki. Najczęstszym winowajcą jest czujnik temperatury komory wraz z wiązką; główna płytka PCB to drugi podejrzany.</p>
+<ol>
+<li>Odetnij zasilanie na 5–10 minut i powtórz test dokładnie raz; jeśli C-21 wraca przy kolejnym nagrzewaniu, usterka jest rzeczywista.</li>
+<li>Odłącz kuchenkę, wykręć dwie śruby mocujące sondę czujnika na tylnej ściance komory i wysuń wiązkę, aby odpiąć wtyczkę.</li>
+<li>Zmierz czujnik multimetrem: w temperaturze pokojowej prawidłowo wypada ok. 1080 Ω. Przerwa albo skrajnie odstający odczyt oznacza wymianę.</li>
+<li>Obejrzyj wtyczkę wiązki tam, gdzie biegnie blisko elementu grzejnego — nadtopiona izolacja produkuje ten sam kod.</li>
+<li>Jeżeli czujnik jest sprawny, a kod nadal wraca, płytka źle reguluje pracę grzałek — to naprawa na poziomie serwisu.</li>
+</ol>
+<h2>C-24: kontrola gwałtownego wzrostu temperatury</h2>
+<p><a href="https://pl.codefixcoffee.com/samsung/range-wall-oven/c-24/">C-24</a> wykrywany jest w okolicy wentylacji i elektroniki: przedział z układami nagrzewa się szybciej, niż zakłada płytka. Samsung dokumentuje rodzinę C-24/C-25 jako przegrzanie związane właśnie z tą strefą wentylacji. W praktyce winowajca jest jeden z trzech: wentylator chłodzący, który wcale się nie rozkręca, zablokowany przepływ powietrza wokół urządzenia albo umierający termistor nadtemperaturowy, odczytujący zdrową strefę jako gorącą.</p>
+<p>Diagnostyka sprowadza się do patrzenia i słuchania. Po resecie zasilania uruchom pieczenie i posłuchaj, czy wraz z nagrzewaniem słychać wentylator konwekcji i chłodzenia — cisza jest odpowiedzią. Sprawdź odstępy montażowe oraz to, czy kratki pod lub za urządzeniem nie są zakryte meblami, folią albo kurzem. Przy odłączonym zasilaniu można zmierzyć termistor nadtemperaturowy na jego wtyczce — pracuje w podobnym przedziale ok. 1000 Ω jak czujnik komory, a egzemplarz z przerwą lub dryfem idzie do wymiany. Martwy wentylator wymień, zanim ugotuje płytę sterującą: ciepło jest tu przyczyną, a elektronika tylko ofiarą.</p>
+<h2>C-F2: sygnał zwrotny wentylatora chłodzenia</h2>
+<p><a href="https://pl.codefixcoffee.com/samsung/range-wall-oven/c-f2/">C-F2</a> wygląda jak kod przegrzania, ale zwykle nim nie jest. Rodzina C-F to komunikaty „monitorowany podzespół nie odpowiada”, a w przypadku C-F2 tym podzespołem jest obwód wentylatora chłodzenia: wyświetlacz nie dostaje oczekiwanego sygnału zwrotnego. Albo wentylator faktycznie stoi, albo jego wtyczka jest luźna lub nadtopiona, albo przerwana jest linia sygnałowa prowadząca do płytki.</p>
+<p>Zajmuj się tym w kolejności. Po resecie zasilania nagrzej piekarnik i sprawdź, czy wirnik fizycznie się obraca. Kręcący się wentylator przy utrzymującym się kodzie wskazuje na tor sygnałowy: dociśnij wtyczkę wentylatora na płytce i poszukaj przebarwionych ciepłem pinów. Cichy wentylator to najpierw kontrola, czy nic nie blokuje wirnika — kurz albo upuszczona śrubka za panelem — a dopiero potem pomiar uzwojenia pod kątem przerwy. Naprawy wentylatora i wtyczki są tanie; C-F2, które przetrwało obie kontrolole, kieruje podejrzenie na wejście głównej płytki.</p>
+<h3>Kuchenka w zabudowie: polskie realia</h3>
+<p>W Polsce te urządzenia montuje się niemal zawsze w zabudowie, a instrukcja Samsunga wymaga konkretnych odstępów i drożnych otworów wentylacyjnych z tyłu — ciasno przycięta zabudowa potrafi ograniczyć chłodzenie i doprowadzić do kodów z rodziny C. Zanim zaczniesz samodzielne naprawy, sprawdź status gwarancji w <a href="https://www.samsung.com/pl/support/">polskim centrum wsparcia Samsung</a>: kody C-21 i C-F2 dotyczą układów bezpieczeństwa, a serwis ma dla nich dedykowane procedury.</p>
+<h2>Ile kosztują części</h2>
+<p>Czujniki temperatury komory kosztują 15–40 € i są robotą na dziesięć minut ze śrubokrętem — to najczęstsza naprawa w całej rodzinie. Wentylatory chłodzenia: 40–90 €, wiązki: 10–20 €. Główna płytka PCB, 150–300 €, to wydatek, do którego przechodzisz dopiero po odhaczeniu czujnika i wentyladora. Wizyta technika to ok. 120–250 € za diagnozę plus część; przy urządzeniu po gwarancji z usterką na poziomie płytki rozsądnie najpierw przyjąć wycenę, a dopiero potem cokolwiek zamawiać.</p>
+<p>Jedna zasada obejmuje całą rodzinę: nie resetuj C-21 w kółko i nie gotuj dalej. Kod oznacza, że płytka zarejestrowała już temperaturę, która jej się nie podobała — kolejne zadziałanie może nastąpić wyżej na skali.</p>
+</main>
+<footer>Poradniki napraw i objaśnienia kodów błędów z codefixcoffee.com.</footer>
+</body></html>
